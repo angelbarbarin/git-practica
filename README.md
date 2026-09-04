@@ -3,8 +3,6 @@
 Repositorio de práctica para la Tarea 2: Introducción a Git y control de versiones.
 
 Autor: Angel Ibarbarin
-EOF
-cat >> README.md << 'EOF'
 
 ## Los tres estados principales de Git
 
@@ -146,7 +144,7 @@ sin Git.
 ## Parte 3 — Entorno de trabajo
 
 - **Sistema operativo:** Windows
-- **Versión de Git:** (pega aquí la salida de `git --version`)
+- **Versión de Git:** git version 2.47.1.windows.2
 - **Comando utilizado para verificar la instalación:** `git --version`
 - **Comandos de configuración:**
   `git config --global user.name "..."` y `git config --global user.email "..."`
