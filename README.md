@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Práctica de Git — Tecnologías de Desarrollo en el Servidor
 
 Repositorio de práctica para la Tarea 2: Introducción a Git y control de versiones.
@@ -25,4 +24,25 @@ Git organiza el trabajo en tres áreas:
 - `git add` mueve los cambios del Working Directory al Staging Area.
 - `git commit` toma lo que está en el Staging Area y lo guarda como una nueva versión
   en el Repository.
-EOF
+
+  ## Ramas y fusión (merge)
+
+**¿Qué es una rama?** Una rama es una línea de desarrollo independiente dentro del mismo
+repositorio. Al crear una rama, Git genera un puntero que avanza con sus propios commits
+sin modificar la rama principal, de modo que se puede trabajar en algo nuevo sin poner en
+riesgo el código que ya funciona.
+
+**¿Por qué los equipos usan ramas?**
+
+- Cada persona o cada nueva funcionalidad trabaja por separado, sin pisarse el trabajo.
+- La rama principal (`main`) se mantiene siempre estable y lista para publicarse.
+- Permiten probar ideas o corregir errores de forma aislada y descartarlas si no funcionan.
+- Facilitan la revisión de código antes de integrar los cambios.
+
+**¿Qué hace `git merge`?** Toma los commits de una rama y los integra en la rama en la que
+estás parado, combinando los cambios de ambas. Si las dos ramas modificaron las mismas
+líneas de un archivo, Git no puede decidir solo y avisa de un *conflicto*, que debe
+resolverse manualmente antes de completar la fusión.
+
+En esta práctica se creó la rama `feature/saludo`, se agregó en ella la función `saludar()`
+y después se fusionó con `main` mediante `git merge`.
