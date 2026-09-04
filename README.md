@@ -46,3 +46,24 @@ resolverse manualmente antes de completar la fusión.
 
 En esta práctica se creó la rama `feature/saludo`, se agregó en ella la función `saludar()`
 y después se fusionó con `main` mediante `git merge`.
+
+## El archivo .gitignore
+
+**¿Para qué sirve?** Es un archivo de texto donde se listan los archivos y carpetas que Git
+debe ignorar. Todo lo que coincida con esos patrones no aparece en `git status` ni puede
+agregarse por accidente con `git add`, de modo que nunca llega al historial del repositorio.
+
+**¿Por qué no se incluye `node_modules`?**
+
+- Contiene las dependencias descargadas desde npm: son miles de archivos y cientos de
+  megabytes que harían el repositorio enorme y lento de clonar.
+- No es código propio del proyecto, sino código de terceros.
+- Es reproducible: cualquier persona puede regenerar la carpeta ejecutando `npm install`,
+  porque las dependencias y sus versiones ya están declaradas en `package.json`.
+
+**¿Por qué `.env` no debe publicarse?** Ese archivo guarda variables de entorno sensibles:
+contraseñas de bases de datos, llaves de API, tokens de acceso. Si se sube al repositorio
+—sobre todo a uno público— esa información queda expuesta a cualquiera y puede usarse para
+acceder a los sistemas reales. Además, cada entorno (desarrollo, pruebas, producción)
+necesita valores distintos. La práctica habitual es ignorar `.env` y versionar en su lugar
+un `.env.example` con los nombres de las variables pero sin los valores reales.
